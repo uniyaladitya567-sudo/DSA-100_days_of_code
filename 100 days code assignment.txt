@@ -86,8 +86,7 @@ def longestWord(s): return max(s.split(), key=len)
 def countWords(s): return len(s.split())
 def charCount(s): return {c:s.count(c) for c in set(s)}
 def upper(s): return s.upper()
-def lower(s): return s.lower()
-[11:09 am, 26/03/2026] puspakothari969: class Node:
+def lower(s): return s.lower() class Node:
     def _init_(self,data):
         self.data=data; self.next=None
 
