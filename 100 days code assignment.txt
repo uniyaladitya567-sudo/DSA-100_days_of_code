@@ -1,0 +1,121 @@
+def twoSum(nums, target):
+    d={}
+    for i in range(len(nums)):
+        if target-nums[i] in d:
+            return [d[target-nums[i]],i]
+        d[nums[i]]=i
+ def findMax(arr):
+    return max(arr)
+  def reverseArray(arr):
+    return arr[::-1]
+def isSorted(arr):
+    for i in range(len(arr)-1):
+        if arr[i]>arr[i+1]:
+            return False
+    return True
+ def removeDuplicates(arr):
+    return list(set(arr))
+ def moveZeroes(arr):
+    return [x for x in arr if x!=0]+[0]*arr.count(0)
+ def rotate(arr,k):
+    k%=len(arr)
+    return arr[-k:]+arr[:-k]
+ def linearSearch(arr,key):
+    return arr.index(key) if key in arr else -1
+ def union(a,b):
+    return list(set(a)|set(b))
+def missingNumber(arr,n):
+    return n*(n+1)//2 - sum(arr)
+ def kadane(arr):
+    m=c=arr[0]
+    for x in arr[1:]:
+        c=max(x,c+x)
+        m=max(m,c)
+    return m
+ def majority(arr):
+    count=0; cand=None
+    for x in arr:
+        if count==0: cand=x
+        count+=1 if x==cand else -1
+    return cand
+ def sort012(arr):
+    return sorted(arr)
+ def stock(arr):
+    p=0
+    for i in range(1,len(arr)):
+        if arr[i]>arr[i-1]:
+            p+=arr[i]-arr[i-1]
+    return p
+ def rearrange(arr):
+    return [x for x in arr if x>=0]+[x for x in arr if x<0]
+ def leaders(arr):
+    res=[]; m=float('-inf')
+    for x in arr[::-1]:
+        if x>=m:
+            res.append(x); m=x
+    return res[::-1]
+ def longestConsecutive(arr):
+    s=set(arr); longest=0
+    for x in s:
+        if x-1 not in s:
+            y=x
+            while y in s: y+=1
+            longest=max(longest,y-x)
+    return longest
+def setZero(mat):
+    r=set(); c=set()
+    for i in range(len(mat)):
+        for j in range(len(mat[0])):
+            if mat[i][j]==0:
+                r.add(i); c.add(j)
+    for i in r: mat[i]=[0]*len(mat[0])
+    for j in c:
+        for i in range(len(mat)):
+            mat[i][j]=0
+    return mat
+ def rotateMatrix(mat):
+    return [list(row) for row in zip(*mat[::-1])]
+ def reverseString(s): return s[::-1]
+def palindrome(s): return s==s[::-1]
+def removeVowels(s): return ''.join(c for c in s if c.lower() not in 'aeiou')
+def anagram(a,b): return sorted(a)==sorted(b)
+def firstUnique(s):
+    for c in s:
+        if s.count(c)==1: return c
+def longestWord(s): return max(s.split(), key=len)
+def countWords(s): return len(s.split())
+def charCount(s): return {c:s.count(c) for c in set(s)}
+def upper(s): return s.upper()
+def lower(s): return s.lower()
+[11:09 am, 26/03/2026] puspakothari969: class Node:
+    def _init_(self,data):
+        self.data=data; self.next=None
+
+def insert(head,val):
+    n=Node(val)
+    if not head: return n
+    temp=head
+    while temp.next: temp=temp.next
+    temp.next=n
+    return head
+
+def delete(head,key):
+    temp=head
+    if temp and temp.data==key:
+        return temp.next
+    while temp.next:
+        if temp.next.data==key:
+            temp.next=temp.next.next; break
+        temp=temp.next
+    return head
+ stack=[]
+def push(x): stack.append(x)
+def pop(): return stack.pop()
+
+from collections import deque
+q=deque()
+def enqueue(x): q.append(x)
+def dequeue(): return q.popleft()
+ def fact(n): return 1 if n==0 else n*fact(n-1)
+def fib(n): return n if n<=1 else fib(n-1)+fib(n-2)
+def sumN(n): return n+sumN(n-1) if n>0 else 0
